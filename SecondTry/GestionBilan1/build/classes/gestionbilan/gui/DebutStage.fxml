@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="3200.0" prefWidth="649.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionbilan.gui.DebutStageController">
+    <stylesheets>
+        <URL value="@debutstage.css" />
+    </stylesheets>
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f53939" height="148.0" layoutX="15.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="673.0" />
+      <Text fill="#fff8f8" layoutX="156.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debut de Stage" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="52.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="267.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="( 6eme Semaine )" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Label layoutX="15.0" layoutY="231.0" text="Qu’est-ce qui vous plaît et vous motive dans votre stage ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep1" layoutX="15.0" layoutY="260.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="15.0" layoutY="410.0" text="Décrivez une situation de travail marquante que vous avez vécu pendant votre stage.">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep2" layoutX="13.0" layoutY="439.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="12.0" layoutY="593.0" text="Avez-vous vécu pendant votre stage une situation difficile ou problématique ? Si oui, comment avez-vous réagi ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep3" layoutX="14.0" layoutY="622.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="6.0" layoutY="781.0" text=" Que retirez-vous comme apprentissages depuis le début de votre stage ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep4" layoutX="15.0" layoutY="809.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="7.0" layoutY="962.0" text="Comment gérez-vous les délais dans votre travail ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep5" layoutX="15.0" layoutY="989.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="5.0" layoutY="1142.0" text="De quelle(s) manière(s) utilisez-vous vos capacités/talents dans votre stage ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep6" layoutX="15.0" layoutY="1189.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="5.0" layoutY="1161.0" text="Citez des exemples :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="1354.0" text="À combien évaluez-vous votre capacité à : (1 plus mauvaise note – 4 meilleure note) ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="1385.0" text="Travailler en équipe ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rd1" layoutX="50.0" layoutY="1414.0" mnemonicParsing="false" text="1" />
+      <RadioButton fx:id="rd2" layoutX="114.0" layoutY="1414.0" mnemonicParsing="false" text="2" />
+      <RadioButton fx:id="rd3" layoutX="177.0" layoutY="1414.0" mnemonicParsing="false" text="3" />
+      <RadioButton fx:id="rd4" layoutX="237.0" layoutY="1414.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="15.0" layoutY="1439.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep7" layoutX="13.0" layoutY="1465.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="12.0" layoutY="1632.0" text="Être autonome ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rd11" layoutX="65.0" layoutY="1661.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="129.0" layoutY="1661.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="192.0" layoutY="1661.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="252.0" layoutY="1661.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="25.0" layoutY="1686.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep8" layoutX="16.0" layoutY="1718.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="10.0" layoutY="1881.0" text="Être résilient ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="75.0" layoutY="1910.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="139.0" layoutY="1910.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="202.0" layoutY="1910.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="262.0" layoutY="1910.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="35.0" layoutY="1935.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret :  ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep9" layoutX="26.0" layoutY="1967.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="15.0" layoutY="2134.0" text="Organiser votre travail dans les délais ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="85.0" layoutY="2164.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="149.0" layoutY="2164.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="212.0" layoutY="2164.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="272.0" layoutY="2164.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="45.0" layoutY="2189.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret :  ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep10" layoutX="36.0" layoutY="2221.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="16.0" layoutY="2390.0" text="Prendre des initiatives ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="85.0" layoutY="2420.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="149.0" layoutY="2420.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="212.0" layoutY="2420.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="272.0" layoutY="2420.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="45.0" layoutY="2445.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret :  ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep11" layoutX="36.0" layoutY="2477.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="15.0" layoutY="2643.0" text="Réaliser un travail de qualité (rigueur professionnel, être appliqué…) ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="85.0" layoutY="2673.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="149.0" layoutY="2673.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="212.0" layoutY="2673.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="272.0" layoutY="2673.0" mnemonicParsing="false" text="4" />
+      <Label layoutX="45.0" layoutY="2698.0" text="Pourquoi vous êtes-vous attribué cette note ? Donnez un exemple concret :  ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rep12" layoutX="36.0" layoutY="2730.0" prefHeight="141.0" prefWidth="619.0" />
+      <Label layoutX="11.0" layoutY="2891.0" text="Souhaitez-vous me contacter pour échanger sur le déroulement de votre stage ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="85.0" layoutY="2921.0" mnemonicParsing="false" text="Oui" />
+      <RadioButton layoutX="149.0" layoutY="2921.0" mnemonicParsing="false" text="Non" />
+      <Label layoutX="45.0" layoutY="2946.0" text="Par quel moyen (par téléphone, mail, rendez-vous…) ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rep13" layoutX="43.0" layoutY="2977.0" prefHeight="25.0" prefWidth="586.0" />
+      <Button layoutX="309.0" layoutY="3133.0" mnemonicParsing="false" text="Enregistrer" />
+      <ScrollBar layoutX="695.0" orientation="VERTICAL" prefHeight="3200.0" prefWidth="14.0" />
+   </children>
+</AnchorPane>
