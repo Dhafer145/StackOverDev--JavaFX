@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutEvMiController">
+   <content>
+      <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="602.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@ajoutevmi.css" />
+          </stylesheets>
+          <children>
+            <Accordion layoutX="14.0" />
+            <Pane layoutX="-14.0" layoutY="-8.0" prefHeight="65.0" prefWidth="637.0" style="-fx-background-color: #2E70DE;">
+               <children>
+                  <Text fill="WHITE" layoutX="29.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une evaluation mi-parcours">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Label graphicTextGap="10.0" layoutX="12.0" layoutY="62.0" text="PONCTUALITE AU TRAVAIL :" textFill="#2e70de" underline="true" />
+            <Label layoutX="12.0" layoutY="85.0" text="Le stagiaire s’est-il informé de lui-même des horaires à respecter?" />
+            <Label layoutX="12.0" layoutY="107.0" text="Est-il ponctuel ? " />
+            <RadioButton fx:id="ponctualite1oui" layoutX="370.0" layoutY="85.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="ponctualite1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="ponctualite1non" layoutX="418.0" layoutY="85.0" mnemonicParsing="false" text="non" toggleGroup="$ponctualite1" />
+            <RadioButton fx:id="ponctualite2oui" layoutX="106.0" layoutY="107.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="ponctualite2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="ponctualite2non" layoutX="152.0" layoutY="107.0" mnemonicParsing="false" text="non" toggleGroup="$ponctualite2" />
+            <Label layoutX="12.0" layoutY="134.0" text="Commentaire" />
+            <TextField fx:id="commentaire1" layoutX="88.0" layoutY="130.0" prefHeight="25.0" prefWidth="490.0" />
+            <Label graphicTextGap="10.0" layoutX="14.0" layoutY="159.0" text="INTEGRATION DANS L’ENTREPRISE :" textFill="#2e70de" underline="true" />
+            <Label layoutX="13.0" layoutY="179.0" text="Le stagiaire a-t-il cherché dès le début à nouer des connaissances ?" />
+            <Label layoutX="13.0" layoutY="226.0" text="D’après vous, est-il déjà bien intégré parmi les membres de votre service ?" />
+            <Label layoutX="13.0" layoutY="202.0" text="Cherche-t-il à communiquer avec les autres ?" />
+            <RadioButton fx:id="integration2oui" layoutX="261.0" layoutY="202.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="integration2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="integration1oui" layoutX="381.0" layoutY="179.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="integration1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="integration3oui" layoutX="410.0" layoutY="226.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="integration3" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="integration3non" layoutX="457.0" layoutY="226.0" mnemonicParsing="false" text="non" toggleGroup="$integration3" />
+            <RadioButton fx:id="integration2non" layoutX="307.0" layoutY="202.0" mnemonicParsing="false" text="non" toggleGroup="$integration2" />
+            <RadioButton fx:id="integration1non" layoutX="429.0" layoutY="179.0" mnemonicParsing="false" text="non" toggleGroup="$integration1" />
+            <Label layoutX="13.0" layoutY="253.0" text="Commentaire" />
+            <TextField fx:id="commentaire2" layoutX="87.0" layoutY="249.0" prefHeight="25.0" prefWidth="490.0" />
+            <Label graphicTextGap="10.0" layoutX="13.0" layoutY="277.0" text="TRAVAIL : " textFill="#2e70de" underline="true" />
+            <Label layoutX="13.0" layoutY="322.0" text="S’est-il préoccupé des méthodes de travail de l’entreprise ?" />
+            <Label layoutX="13.0" layoutY="344.0" text="La quantité de travail fournie est elle satisfaisante ?" />
+            <Label layoutX="13.0" layoutY="367.0" text="Respecte-t-il les délais ?" />
+            <Label layoutX="13.0" layoutY="299.0" text="Est-il intéressé par son travail Est-il intéressé par son travail ?" />
+            <RadioButton fx:id="travail4oui" layoutX="150.0" layoutY="366.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="travail4" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="travail3oui" layoutX="289.0" layoutY="344.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="travail3" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="travail2oui" layoutX="331.0" layoutY="322.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="travail2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="travail1oui" layoutX="341.0" layoutY="299.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="travail1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="travail4non" layoutX="196.0" layoutY="366.0" mnemonicParsing="false" text="non" toggleGroup="$travail4" />
+            <RadioButton fx:id="travail3non" layoutX="334.0" layoutY="344.0" mnemonicParsing="false" text="non" toggleGroup="$travail3" />
+            <RadioButton fx:id="travail2non" layoutX="379.0" layoutY="322.0" mnemonicParsing="false" text="non" toggleGroup="$travail2" />
+            <RadioButton fx:id="travail1non" layoutX="389.0" layoutY="299.0" mnemonicParsing="false" text="non" toggleGroup="$travail1" />
+            <Label layoutX="13.0" layoutY="394.0" text="Commentaire" />
+            <TextField fx:id="commentaire3" layoutX="88.0" layoutY="390.0" prefHeight="25.0" prefWidth="490.0" />
+            <Label graphicTextGap="10.0" layoutX="14.0" layoutY="419.0" text="COMPETENCES TECHNIQUES :" textFill="#2e70de" underline="true" />
+            <Label layoutX="14.0" layoutY="440.0" text="Possède-t-il les compétences techniques nécessaires pour son travail ?" />
+            <Label layoutX="15.0" layoutY="550.0" text="Cherche-t-il à aider les autres ?" />
+            <Label layoutX="14.0" layoutY="462.0" text="A-t-il eu besoin d’apprendre une nouvelle technique ou un nouveau logiciel ?" />
+            <Label layoutX="15.0" layoutY="506.0" text="Cherche-t-il à améliorer ses compétences dans certains domaines ?" />
+            <Label layoutX="15.0" layoutY="484.0" text="Si oui, a-t-il montré sa capacité à apprendre ?" />
+            <Label layoutX="15.0" layoutY="528.0" text="Est-il autonome ?" />
+            <RadioButton fx:id="competence1oui" layoutX="394.0" layoutY="440.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence1non" layoutX="442.0" layoutY="440.0" mnemonicParsing="false" text="non" toggleGroup="$competence1" />
+            <RadioButton fx:id="competence2oui" layoutX="433.0" layoutY="462.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence2non" layoutX="481.0" layoutY="462.0" mnemonicParsing="false" text="non" toggleGroup="$competence2" />
+            <RadioButton fx:id="competence3oui" layoutX="264.0" layoutY="484.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence3" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence3non" layoutX="312.0" layoutY="484.0" mnemonicParsing="false" text="non" toggleGroup="$competence3" />
+            <RadioButton fx:id="competence4oui" layoutX="378.0" layoutY="506.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence4" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence4non" layoutX="426.0" layoutY="506.0" mnemonicParsing="false" text="non" toggleGroup="$competence4" />
+            <RadioButton fx:id="competence5oui" layoutX="115.0" layoutY="528.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence5" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence5non" layoutX="163.0" layoutY="528.0" mnemonicParsing="false" text="non" toggleGroup="$competence5" />
+            <RadioButton fx:id="competence6oui" layoutX="187.0" layoutY="550.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="competence6" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="competence6non" layoutX="235.0" layoutY="550.0" mnemonicParsing="false" text="non" toggleGroup="$competence6" />
+            <Label layoutX="17.0" layoutY="578.0" text="Commentaire" />
+            <TextField fx:id="commentaire4" layoutX="92.0" layoutY="574.0" prefHeight="25.0" prefWidth="490.0" />
+            <Label graphicTextGap="10.0" layoutX="15.0" layoutY="603.0" text="EVALUATION GLOBALE :" textFill="#2e70de" underline="true" />
+            <Label layoutX="15.0" layoutY="624.0" text="Etes-vous globalement satisfait du début de ce stage ?" />
+            <RadioButton fx:id="evaluation_globaleoui" layoutX="313.0" layoutY="624.0" mnemonicParsing="false" text="oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="evaluation_globale" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="evaluation_globalenon" layoutX="361.0" layoutY="624.0" mnemonicParsing="false" text="non" toggleGroup="$evaluation_globale" />
+            <Label layoutX="15.0" layoutY="645.0" text="Quels sont d’après vous les points forts et les points faibles de ce stagiaire ?" />
+            <TextArea fx:id="commentaire5" layoutX="16.0" layoutY="669.0" prefHeight="45.0" prefWidth="568.0" />
+            <Button fx:id="btnConfirmer" layoutX="191.0" layoutY="727.0" mnemonicParsing="false" onAction="#ajoutEv" text="Confirmer" />
+            <Button fx:id="btnCancel" layoutX="311.0" layoutY="727.0" mnemonicParsing="false" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
