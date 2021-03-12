@@ -1,2 +1,0 @@
-# StackOverDev
-PiDev
