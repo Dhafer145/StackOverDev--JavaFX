@@ -53,6 +53,8 @@ public class Validation_propositionController implements Initializable {
     private TableView<Proposition_projet> tv_prop;
     @FXML
     private Button btnConsulter;
+    @FXML
+    private Button btncr;
 
     /**
      * Initializes the controller class.
@@ -126,6 +128,17 @@ public class Validation_propositionController implements Initializable {
 //                mainStage.setScene(scene);
 //                mainStage.show();
         }
+
+    @FXML
+    private void validationCr(ActionEvent event) throws IOException {
+        
+        btncr.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("consulter_cr.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+    }
         
     }
     

@@ -11,7 +11,7 @@
    <children>
       <Pane prefHeight="130.0" prefWidth="614.0" style="-fx-background-color: #2E70DE;">
          <children>
-            <Text fill="WHITE" layoutX="213.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comptes rendus" wrappingWidth="187.005859375">
+            <Text fill="WHITE" layoutX="213.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compte rendu" wrappingWidth="187.005859375">
                <font>
                   <Font name="Arial Black" size="21.0" />
                </font>

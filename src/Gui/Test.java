@@ -28,7 +28,7 @@ public class Test extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Validation_proposition.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Consulter_cr.fxml"));
         
         Scene scene = new Scene(root);
         

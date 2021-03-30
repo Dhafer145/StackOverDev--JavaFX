@@ -8,12 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.Details_propositionController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Details_propositionController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="1.0" layoutY="1.0" prefHeight="496.0" prefWidth="745.0">
+            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-13.0" layoutY="1.0" prefHeight="496.0" prefWidth="745.0">
                <children>
                   <Pane layoutX="-13.0" layoutY="-14.0" prefHeight="138.0" prefWidth="806.0" style="-fx-background-color: #2E70DE;">
                      <children>
@@ -49,6 +48,7 @@
                   <TextField fx:id="text_cahier" editable="false" layoutX="329.0" layoutY="299.0" prefHeight="25.0" prefWidth="355.0" />
                   <TextField fx:id="text_sujet" editable="false" layoutX="329.0" layoutY="251.0" prefHeight="25.0" prefWidth="355.0" />
                   <TextField fx:id="text_description" editable="false" layoutX="329.0" layoutY="347.0" prefHeight="25.0" prefWidth="355.0" />
+                  <Button layoutX="593.0" layoutY="393.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Valider" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

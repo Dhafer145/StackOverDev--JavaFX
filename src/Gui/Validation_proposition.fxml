@@ -10,11 +10,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Validation_propositionController">
    <children>
-      <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="3.0" layoutY="3.0" prefHeight="496.0" prefWidth="745.0">
+      <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-11.0" layoutY="22.0" prefHeight="496.0" prefWidth="792.0">
          <children>
-            <Pane layoutX="-10.0" layoutY="-12.0" prefHeight="136.0" prefWidth="803.0" style="-fx-background-color: #2E70DE;">
+            <Pane layoutX="11.0" layoutY="-23.0" prefHeight="147.0" prefWidth="782.0" style="-fx-background-color: #2E70DE;">
                <children>
-                  <Text fill="WHITE" layoutX="203.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="validation de proposition " wrappingWidth="397.005859375">
+                  <Text fill="WHITE" layoutX="203.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="validation des propositions de projets" textAlignment="CENTER" wrappingWidth="397.005859375">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font>
@@ -23,12 +23,13 @@
             </Pane>
             <TableView fx:id="tv_prop" layoutX="156.0" layoutY="144.0" prefHeight="238.0" prefWidth="459.0">
               <columns>
-                <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colid" prefWidth="75.0" text="ID" visible="false" />
                 <TableColumn fx:id="colnom" prefWidth="104.0" text="ID_ETUDIANT" />
-                  <TableColumn fx:id="colsujet" prefWidth="279.0" text="Sujet" />
+                  <TableColumn fx:id="colsujet" prefWidth="354.0" text="Sujet" />
               </columns>
             </TableView>
             <Button fx:id="btnConsulter" layoutX="488.0" layoutY="388.0" mnemonicParsing="false" onAction="#consulter" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #2E70DE;" text="Consulter" textFill="WHITE" />
+            <Button fx:id="btncr" layoutX="23.0" layoutY="451.0" mnemonicParsing="false" onAction="#validationCr" prefHeight="31.0" prefWidth="192.0" style="-fx-background-color: #1FA363;" text="Validation des comptes rendus" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

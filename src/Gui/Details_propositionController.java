@@ -46,6 +46,8 @@ public class Details_propositionController implements Initializable {
     private TextField text_cahier;
     @FXML
     private Button btnConsulter;
+    @FXML
+    private Button btnConsulter1;
 
     /**
      * Initializes the controller class.
