@@ -5,10 +5,12 @@
  */
 package Gui;
 
+import entities.CompteRendu;
 import entities.Proposition_projet;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -24,6 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import tools.Myconn;
 
 /**
@@ -47,7 +50,14 @@ public class Details_propositionController implements Initializable {
     @FXML
     private Button btnConsulter;
     @FXML
-    private Button btnConsulter1;
+    private Button btnvalid;
+    @FXML
+    private Button btnrefus;
+    @FXML
+    private TextField tfraison;
+    Connection cn = Myconn.getInstance().getConnection();
+    @FXML
+    private TextField tfid;
 
     /**
      * Initializes the controller class.
@@ -60,6 +70,7 @@ public class Details_propositionController implements Initializable {
     }   
     public void initData(Proposition_projet p){
         this.p=p;
+        tfid.setText(""+this.p.getId_sujet());
         text_nom.setText(""+this.p.getId_user());
         text_sujet.setText(this.p.getNom_sujet());
          text_cahier.setText(this.p.getCahier_charge());
@@ -96,6 +107,66 @@ public class Details_propositionController implements Initializable {
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);
                 mainStage.show();
+    }
+
+    @FXML
+    private void Valider(ActionEvent event) {
+//  Proposition_projet pp= tfid.getId_sujer()  ;
+        PreparedStatement stm;
+
+        try {
+            stm = cn.prepareStatement("UPDATE proposition_projet SET validation_pp=?,commentaire_pp=?  WHERE id_sujet=?");
+            
+         stm.setString(1,"Validé");
+         stm.setString(2,tfraison.getText());
+            
+//             Int id=  ValueOf.tfid.getText();
+          stm.setString(3,tfid.getText());
+         
+
+
+              int i = stm.executeUpdate();
+
+            System.out.println(i);
+            
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+
+    @FXML
+    private void Refuser(ActionEvent event) {
+        Proposition_projet pp= new Proposition_projet() ;
+        PreparedStatement stm;
+if  (tfraison.getText().length()==0) {
+
+            JOptionPane.showMessageDialog(null, "veuillez saisir la raison du refus");
+             }
+else{
+        try {
+            stm = cn.prepareStatement("UPDATE proposition_projet SET validation_pp=?,commentaire_pp=?  WHERE id_sujet=?");
+            
+         stm.setString(1,"Refusé");
+         stm.setString(2,tfraison.getText());
+            
+                 
+          stm.setInt(3, pp.getId_sujet());
+           
+           
+            
+
+
+              int i = stm.executeUpdate();
+
+            System.out.println(i);
+            
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     }
      
     

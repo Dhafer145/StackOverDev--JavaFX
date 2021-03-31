@@ -101,9 +101,10 @@ public class Validation_propositionController implements Initializable {
     PreparedStatement stm;
     
     Connection cnx = Myconn.getInstance().getConnection();
-               ResultSet rs = cnx.createStatement().executeQuery("Select  id_user,nom_sujet,cahier_charge,description from proposition_projet where id_sujet= "+pp.getId_sujet());
+               ResultSet rs = cnx.createStatement().executeQuery("Select  id_sujet,id_user,nom_sujet,cahier_charge,description from proposition_projet where id_sujet= "+pp.getId_sujet());
                
                while(rs.next()){
+                pj.setId_sujet(rs.getInt("id_sujet"));
                 pj.setId_user(rs.getInt("id_user"));
                 pj.setNom_sujet(rs.getString("nom_sujet"));
                 pj.setCahier_charge(rs.getString("cahier_charge"));

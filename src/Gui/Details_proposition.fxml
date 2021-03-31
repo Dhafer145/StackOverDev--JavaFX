@@ -12,7 +12,7 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-13.0" layoutY="1.0" prefHeight="496.0" prefWidth="745.0">
+            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-13.0" layoutY="1.0" prefHeight="567.0" prefWidth="793.0">
                <children>
                   <Pane layoutX="-13.0" layoutY="-14.0" prefHeight="138.0" prefWidth="806.0" style="-fx-background-color: #2E70DE;">
                      <children>
@@ -23,7 +23,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Button fx:id="btnConsulter" layoutX="14.0" layoutY="451.0" mnemonicParsing="false" onAction="#proposition" prefHeight="31.0" prefWidth="176.0" style="-fx-background-color: #2E70DE;" text="Consulter les propositions" textFill="WHITE" />
+                  <Button fx:id="btnConsulter" layoutX="492.0" layoutY="512.0" mnemonicParsing="false" onAction="#proposition" prefHeight="31.0" prefWidth="197.0" style="-fx-background-color: #1FA363 #1FA363;" text="Consulter les propositions" textFill="WHITE" />
                   <Label layoutX="58.0" layoutY="200.0" prefHeight="30.0" prefWidth="197.0" text="Nom de l'étudiant :">
                      <font>
                         <Font size="20.0" />
@@ -48,7 +48,10 @@
                   <TextField fx:id="text_cahier" editable="false" layoutX="329.0" layoutY="299.0" prefHeight="25.0" prefWidth="355.0" />
                   <TextField fx:id="text_sujet" editable="false" layoutX="329.0" layoutY="251.0" prefHeight="25.0" prefWidth="355.0" />
                   <TextField fx:id="text_description" editable="false" layoutX="329.0" layoutY="347.0" prefHeight="25.0" prefWidth="355.0" />
-                  <Button layoutX="593.0" layoutY="393.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Valider" textFill="WHITE" />
+                  <Button fx:id="btnvalid" layoutX="593.0" layoutY="424.0" mnemonicParsing="false" onAction="#Valider" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Valider" textFill="WHITE" />
+                  <Button fx:id="btnrefus" layoutX="493.0" layoutY="424.0" mnemonicParsing="false" onAction="#Refuser" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Refuser" textFill="WHITE" />
+                  <TextField fx:id="tfraison" layoutX="30.0" layoutY="419.0" prefHeight="124.0" prefWidth="436.0" />
+                  <TextField fx:id="tfid" layoutX="364.0" layoutY="162.0" visible="false" />
                </children>
             </AnchorPane>
          </children>

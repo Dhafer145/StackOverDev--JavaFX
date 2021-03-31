@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="AnO" prefHeight="496.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.JournalStageController">
    <children>
-      <TextField fx:id="text_id" layoutX="378.0" layoutY="427.0" prefHeight="25.0" prefWidth="38.0" />
+      <TextField fx:id="text_id" layoutX="265.0" layoutY="328.0" prefHeight="25.0" prefWidth="38.0" />
       <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="130.0" prefWidth="799.0" style="-fx-background-color: #2E70DE;">
          <children>
             <Text fill="WHITE" layoutX="256.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Journal de stage" wrappingWidth="246.005859375">
@@ -23,13 +23,12 @@
          </children>
       </Pane>
       <Button fx:id="btnEnvoyer" layoutX="67.0" layoutY="424.0" mnemonicParsing="false" onAction="#Send" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="envoyer" textFill="WHITE" />
-      <DatePicker fx:id="date_tache" layoutX="161.0" layoutY="160.0" showWeekNumbers="true" />
-      <TextField fx:id="text_tache" layoutX="161.0" layoutY="225.0" prefHeight="65.0" prefWidth="246.0" />
+      <DatePicker fx:id="date_tache" layoutX="161.0" layoutY="160.0" promptText="../../...." showWeekNumbers="true" />
+      <TextField fx:id="text_tache" layoutX="161.0" layoutY="225.0" prefHeight="65.0" prefWidth="246.0" promptText="Décrire votre tâche..." />
       <Text layoutX="75.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="57.25390625" />
       <Text layoutX="75.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tâche" wrappingWidth="126.25390625" />
       <Text layoutX="75.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avis" wrappingWidth="126.25390625" />
-      <TextField fx:id="text_avis" layoutX="161.0" layoutY="308.0" prefHeight="65.0" prefWidth="246.0" />
-      <Button layoutX="164.0" layoutY="424.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="PDF" textFill="WHITE" />
+      <TextField fx:id="text_avis" layoutX="161.0" layoutY="308.0" prefHeight="65.0" prefWidth="246.0" promptText="Donner votre avis..." />
       <TableView fx:id="tv_stage" layoutX="432.0" layoutY="141.0" onMouseClicked="#modifier" prefHeight="276.0" prefWidth="228.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="75.0" text="ID" visible="false" />
@@ -38,7 +37,7 @@
             <TableColumn fx:id="colavis" prefWidth="75.0" text="avis" />
         </columns>
       </TableView>
-      <Button fx:id="print" layoutX="261.0" layoutY="424.0" mnemonicParsing="false" onAction="#print" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="print" textFill="WHITE" />
-      <Button fx:id="btnModifier" layoutX="357.0" layoutY="424.0" mnemonicParsing="false" onAction="#Modif" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="modifier" textFill="WHITE" />
+      <Button fx:id="print" layoutX="174.0" layoutY="424.0" mnemonicParsing="false" onAction="#print" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="print" textFill="WHITE" />
+      <Button fx:id="btnModifier" layoutX="284.0" layoutY="424.0" mnemonicParsing="false" onAction="#Modif" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="modifier" textFill="WHITE" />
    </children>
 </AnchorPane>
