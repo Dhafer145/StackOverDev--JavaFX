@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="448.0" prefWidth="733.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.Consulter_planController">
+   <children>
+      <Pane layoutY="-5.0" prefHeight="139.0" prefWidth="733.0" style="-fx-background-color: #2E70DE;">
+         <children>
+            <Text fill="WHITE" layoutX="237.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Validation des plans" wrappingWidth="304.005859375">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TextField fx:id="tfbl" editable="false" layoutX="283.0" layoutY="203.0" prefHeight="25.0" prefWidth="340.0" />
+      <TextField fx:id="tfsprint" alignment="TOP_LEFT" editable="false" layoutX="283.0" layoutY="255.0" prefHeight="65.0" prefWidth="340.0" />
+      <Label layoutX="52.0" layoutY="201.0" prefHeight="30.0" prefWidth="197.0" text="Product Backlog :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="255.0" prefHeight="30.0" prefWidth="197.0" text="Sprints">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfidp" layoutX="357.0" layoutY="160.0" visible="false" />
+      <Button fx:id="btnvalid" layoutX="532.0" layoutY="339.0" mnemonicParsing="false" onAction="#Valider" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Valider" textFill="WHITE" />
+      <Button fx:id="btnrefus" layoutX="532.0" layoutY="386.0" mnemonicParsing="false" onAction="#Refuser" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Refuser" textFill="WHITE" />
+      <TextField fx:id="tfraison" alignment="TOP_LEFT" layoutX="14.0" layoutY="348.0" prefHeight="76.0" prefWidth="444.0" />
+      <TextField fx:id="tfetudiant" editable="false" layoutX="283.0" layoutY="160.0" prefHeight="25.0" prefWidth="340.0" />
+      <Label layoutX="52.0" layoutY="158.0" prefHeight="30.0" prefWidth="197.0" text="Etudiant">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

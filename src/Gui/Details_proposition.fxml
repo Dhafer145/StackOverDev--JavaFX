@@ -12,7 +12,7 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-13.0" layoutY="1.0" prefHeight="567.0" prefWidth="793.0">
+            <AnchorPane id="AnchorPane" fx:id="AnO" layoutX="-6.0" layoutY="1.0" prefHeight="567.0" prefWidth="793.0">
                <children>
                   <Pane layoutX="-13.0" layoutY="-14.0" prefHeight="138.0" prefWidth="806.0" style="-fx-background-color: #2E70DE;">
                      <children>
@@ -24,33 +24,33 @@
                      </children>
                   </Pane>
                   <Button fx:id="btnConsulter" layoutX="492.0" layoutY="512.0" mnemonicParsing="false" onAction="#proposition" prefHeight="31.0" prefWidth="197.0" style="-fx-background-color: #1FA363 #1FA363;" text="Consulter les propositions" textFill="WHITE" />
-                  <Label layoutX="58.0" layoutY="200.0" prefHeight="30.0" prefWidth="197.0" text="Nom de l'étudiant :">
+                  <Label layoutX="44.0" layoutY="148.0" prefHeight="30.0" prefWidth="197.0" text="Nom de l'étudiant :">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="58.0" layoutY="248.0" prefHeight="30.0" prefWidth="197.0" text="Sujet :">
+                  <Label layoutX="44.0" layoutY="199.0" prefHeight="30.0" prefWidth="197.0" text="Sujet :">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="58.0" layoutY="296.0" prefHeight="30.0" prefWidth="197.0" text="Cahier de charge :">
+                  <Label layoutX="44.0" layoutY="251.0" prefHeight="30.0" prefWidth="197.0" text="Cahier de charge :">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="58.0" layoutY="344.0" prefHeight="30.0" prefWidth="197.0" text="Description du projet">
+                  <Label layoutX="44.0" layoutY="297.0" prefHeight="30.0" prefWidth="197.0" text="Description du projet">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="text_nom" editable="false" layoutX="329.0" layoutY="203.0" prefHeight="25.0" prefWidth="355.0" />
-                  <TextField fx:id="text_cahier" editable="false" layoutX="329.0" layoutY="299.0" prefHeight="25.0" prefWidth="355.0" />
-                  <TextField fx:id="text_sujet" editable="false" layoutX="329.0" layoutY="251.0" prefHeight="25.0" prefWidth="355.0" />
-                  <TextField fx:id="text_description" editable="false" layoutX="329.0" layoutY="347.0" prefHeight="25.0" prefWidth="355.0" />
+                  <TextField fx:id="text_nom" editable="false" layoutX="336.0" layoutY="151.0" prefHeight="25.0" prefWidth="355.0" promptText="nom.." />
+                  <TextField fx:id="text_cahier" editable="false" layoutX="336.0" layoutY="254.0" prefHeight="25.0" prefWidth="355.0" promptText="cahier de charge.." />
+                  <TextField fx:id="text_sujet" editable="false" layoutX="336.0" layoutY="199.0" prefHeight="25.0" prefWidth="355.0" promptText="sujet.." />
+                  <TextField fx:id="text_description" alignment="TOP_LEFT" editable="false" layoutX="336.0" layoutY="297.0" prefHeight="104.0" prefWidth="355.0" promptText="Décrire votre projet" />
                   <Button fx:id="btnvalid" layoutX="593.0" layoutY="424.0" mnemonicParsing="false" onAction="#Valider" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Valider" textFill="WHITE" />
                   <Button fx:id="btnrefus" layoutX="493.0" layoutY="424.0" mnemonicParsing="false" onAction="#Refuser" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #2E70DE;" text="Refuser" textFill="WHITE" />
-                  <TextField fx:id="tfraison" layoutX="30.0" layoutY="419.0" prefHeight="124.0" prefWidth="436.0" />
+                  <TextField fx:id="tfraison" alignment="TOP_LEFT" layoutX="30.0" layoutY="419.0" prefHeight="124.0" prefWidth="436.0" />
                   <TextField fx:id="tfid" layoutX="364.0" layoutY="162.0" visible="false" />
                </children>
             </AnchorPane>

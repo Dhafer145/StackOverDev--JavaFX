@@ -20,13 +20,13 @@
                   </Text>
                </children>
             </Pane>
-            <Button fx:id="btnSend" layoutX="493.0" layoutY="401.0" mnemonicParsing="false" onAction="#ajout" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="envoyer" textFill="WHITE" />
+            <Button fx:id="btnSend" layoutX="493.0" layoutY="422.0" mnemonicParsing="false" onAction="#ajout" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="envoyer" textFill="WHITE" />
             <Button fx:id="btnsprint" layoutX="464.0" layoutY="324.0" mnemonicParsing="false" onAction="#FileChooser2" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #2E70DE;" text="Choisir votre fichier" textFill="WHITE" />
             <Button fx:id="btnbacklog" layoutX="464.0" layoutY="225.0" mnemonicParsing="false" onAction="#FileChooser1" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #2E70DE;" text="Choisir votre fichier " textFill="WHITE" />
             <Text layoutX="29.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez joindre ici votre Backlog Produit" wrappingWidth="246.00585262477398" />
             <Text layoutX="29.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez joindre ici vos Sprints" wrappingWidth="246.00585262477398" />
             <TextField fx:id="text_backlog" layoutX="326.0" layoutY="271.0" prefHeight="25.0" prefWidth="407.0" />
-            <TextField fx:id="text_sprint" layoutX="326.0" layoutY="365.0" prefHeight="25.0" prefWidth="407.0" />
+            <TextField fx:id="text_sprint" alignment="TOP_LEFT" layoutX="326.0" layoutY="365.0" prefHeight="54.0" prefWidth="407.0" />
             <Button fx:id="btncompte" layoutX="42.0" layoutY="453.0" mnemonicParsing="false" onAction="#Compte" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #2E70DE;" text="Compte rendu" textFill="WHITE" />
          </children>
       </AnchorPane>

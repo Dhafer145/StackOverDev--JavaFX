@@ -121,13 +121,7 @@ public class Validation_propositionController implements Initializable {
                Details_propositionController dp=loader.getController();
                dp.initData(pj);
                
-//         btnConsulter.getScene().getWindow().hide();
-//                Parent root = FXMLLoader.load(getClass().getResource("Details_proposition.fxml"));
-//                
-//                Stage mainStage = new Stage();
-//                Scene scene = new Scene(root);
-//                mainStage.setScene(scene);
-//                mainStage.show();
+
         }
 
     @FXML

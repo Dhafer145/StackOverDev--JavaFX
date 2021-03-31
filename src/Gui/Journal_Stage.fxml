@@ -10,10 +10,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="AnO" prefHeight="496.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.JournalStageController">
+<AnchorPane id="AnchorPane" fx:id="AnO" prefHeight="496.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.JournalStageController">
    <children>
       <TextField fx:id="text_id" layoutX="265.0" layoutY="328.0" prefHeight="25.0" prefWidth="38.0" />
-      <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="130.0" prefWidth="799.0" style="-fx-background-color: #2E70DE;">
+      <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="130.0" prefWidth="935.0" style="-fx-background-color: #2E70DE;">
          <children>
             <Text fill="WHITE" layoutX="256.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Journal de stage" wrappingWidth="246.005859375">
                <font>
@@ -29,12 +29,12 @@
       <Text layoutX="75.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tâche" wrappingWidth="126.25390625" />
       <Text layoutX="75.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avis" wrappingWidth="126.25390625" />
       <TextField fx:id="text_avis" layoutX="161.0" layoutY="308.0" prefHeight="65.0" prefWidth="246.0" promptText="Donner votre avis..." />
-      <TableView fx:id="tv_stage" layoutX="432.0" layoutY="141.0" onMouseClicked="#modifier" prefHeight="276.0" prefWidth="228.0">
+      <TableView fx:id="tv_stage" layoutX="432.0" layoutY="141.0" onMouseClicked="#modifier" prefHeight="281.0" prefWidth="475.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="75.0" text="ID" visible="false" />
-          <TableColumn fx:id="coldate" prefWidth="75.0" text="Date" />
-            <TableColumn fx:id="coltache" prefWidth="75.0" text="tache" />
-            <TableColumn fx:id="colavis" prefWidth="75.0" text="avis" />
+          <TableColumn fx:id="coldate" prefWidth="96.0" text="Date" />
+            <TableColumn fx:id="coltache" prefWidth="195.0" text="tache" />
+            <TableColumn fx:id="colavis" prefWidth="183.0" text="avis" />
         </columns>
       </TableView>
       <Button fx:id="print" layoutX="174.0" layoutY="424.0" mnemonicParsing="false" onAction="#print" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="print" textFill="WHITE" />

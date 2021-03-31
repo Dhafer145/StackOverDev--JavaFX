@@ -102,10 +102,11 @@ Connection connection =Myconn.getInstance().getConnection();
       try{
      
       
-stm = connection.prepareStatement("insert into plan_travail(backlog,sprints) values(?,?)");
+stm = connection.prepareStatement("insert into plan_travail(id_user,backlog,sprints) values(?,?)");
 
 stm.setString(2, text_backlog.getText());
 stm.setString(1, text_sprint.getText());
+
 
 
 
@@ -119,8 +120,7 @@ int i = stm.executeUpdate();
 catch (Exception e){
             e.printStackTrace();
         }
-      
-String title = "succes ";
+        String title = "succes ";
         String message = "plan de travail ajouté avec succes";
 
 TrayNotification tray = new TrayNotification();
@@ -128,6 +128,7 @@ TrayNotification tray = new TrayNotification();
         tray.setMessage(message);
         tray.setNotificationType(NotificationType.SUCCESS);
         tray.showAndWait();
+
 }
     @FXML
         public void Compte() throws IOException {

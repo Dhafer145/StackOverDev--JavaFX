@@ -150,9 +150,9 @@ else{
             
          stm.setString(1,"Refusé");
          stm.setString(2,tfraison.getText());
-            
+            stm.setString(3,tfid.getText());
                  
-          stm.setInt(3, pp.getId_sujet());
+//          stm.setInt(3, pp.getId_sujet());
            
            
             
