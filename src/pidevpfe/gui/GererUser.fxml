@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="gestionea" prefHeight="520.0" prefWidth="800.0" style="-fx-background-color: #708090;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevpfe.gui.userController">
+   <children>
+      <VBox layoutX="292.0" layoutY="62.0" prefHeight="263.0" prefWidth="177.0" spacing="15.0" AnchorPane.bottomAnchor="349.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="480.0" AnchorPane.topAnchor="62.0">
+         <children>
+            <Label text="Nom d'utilisateur">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Nom et Prénom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Email">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Mot de passe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="167.0" text="Confirmer le mot de passe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="42.0" text="Role">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="58.0" text="Adresse">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Date debut de stage" />
+         </children>
+      </VBox>
+      <Button fx:id="btnLoad" layoutX="229.0" layoutY="9.0" mnemonicParsing="false" onAction="#loadchart" text="load" />
+      <VBox layoutX="513.0" layoutY="47.0" prefHeight="308.0" prefWidth="198.0" spacing="10.0" AnchorPane.bottomAnchor="333.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <TextField fx:id="tfuser" promptText="Nom d'utilisateur" />
+            <TextField fx:id="tfname" promptText="Nom et Prénom" />
+            <TextField fx:id="tfemail" promptText="Email" />
+            <PasswordField fx:id="tfpassword" promptText="Mot de passe" />
+            <PasswordField fx:id="tfconfirmp" prefWidth="152.0" promptText="Confirmer le mot de passe" />
+            <ComboBox fx:id="cbrole" maxHeight="25.0" maxWidth="177.0" minHeight="25.0" minWidth="25.0" onAction="#ButtonAction" prefHeight="25.0" prefWidth="174.0" promptText="Role" />
+            <TextField fx:id="tfadress" prefHeight="0.0" prefWidth="174.0" promptText="Adresse" />
+            <DatePicker fx:id="date" promptText="Date debut de stage" showWeekNumbers="true" />
+         </children>
+      </VBox>
+      <VBox prefHeight="28.0" prefWidth="100.0" />
+      <VBox layoutX="648.0" layoutY="7.0" prefHeight="41.0" prefWidth="100.0">
+         <children>
+            <Label fx:id="logout" onMouseClicked="#logout" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: pink;" text="Se déconnecter" />
+         </children>
+      </VBox>
+      <HBox layoutX="320.0" layoutY="358.0" prefHeight="59.0" prefWidth="307.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnajout" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="32.0" prefWidth="83.0" text="Ajouter" />
+            <Button fx:id="btnmodifier" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="32.0" prefWidth="90.0" text="Modifier" />
+            <Button fx:id="btnsupprimer" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="32.0" prefWidth="96.0" text="Supprimer" />
+         </children>
+         <padding>
+            <Insets top="2.0" />
+         </padding>
+      </HBox>
+      <VBox layoutX="211.0" layoutY="405.0" prefHeight="200.0" prefWidth="622.0">
+         <children>
+            <TableView fx:id="tvea" onMouseReleased="#Action" prefHeight="200.0" prefWidth="596.0">
+              <columns>
+                <TableColumn fx:id="coluser" prefWidth="105.0" text="Nom_d'utlisateur" />
+                <TableColumn fx:id="colname" prefWidth="97.0" text="Nom et Prenom" />
+                  <TableColumn fx:id="colemail" prefWidth="115.0" text="          Email" />
+                  <TableColumn fx:id="colpassword" prefWidth="86.0" text="Mot de passe" />
+                  <TableColumn fx:id="colrole" prefWidth="73.0" text="     Rôle" />
+                  <TableColumn fx:id="coladress" prefWidth="66.0" text="Adresse" />
+                  <TableColumn fx:id="coldate" prefWidth="94.0" text="Debut Stage" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="12.0" layoutY="59.0" prefHeight="234.0" prefWidth="177.0" spacing="17.0">
+         <children>
+            <Label fx:id="laccueil" prefHeight="30.0" prefWidth="79.0" text="Accueil">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lgereruser" text="Gérer utlisateur">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lgererprofile" prefHeight="30.0" prefWidth="134.0" text="Gérer profile">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="laffecter" text="Affecter encadrant">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="changepassword" text="Changer mot de passe">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

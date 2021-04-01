@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevpfe.gui.AccueilResponsableController">
+   <children>
+      <VBox layoutX="8.0" layoutY="83.0" prefHeight="234.0" prefWidth="177.0" spacing="17.0">
+         <children>
+            <Label fx:id="laccueil" prefHeight="30.0" prefWidth="79.0" text="Accueil">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lgereruser" onMouseClicked="#gererUser" text="Gérer utlisateur">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lgererprofile" onMouseClicked="#gererProfile" prefHeight="30.0" prefWidth="134.0" text="Gérer profile">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="laffecter" onMouseClicked="#affecterEncadrant" text="Affecter encadrant">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="changepassword" onMouseClicked="#changepassword" text="Changer mot de passe">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="402.0" layoutY="42.0" prefHeight="30.0" prefWidth="195.0" spacing="6.0">
+         <children>
+            <Label fx:id="lemail" prefHeight="26.0" prefWidth="179.0" text="email">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox layoutX="394.0" layoutY="13.0" prefHeight="17.0" prefWidth="195.0" spacing="7.0">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="81.0" text="Bienvenue" textAlignment="RIGHT">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lnom" alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="94.0" text="Label" textAlignment="RIGHT">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="447.0" layoutY="68.0" prefHeight="30.0" prefWidth="139.0" spacing="6.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="115.0" text="se déconnecter">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="225.0" layoutY="128.0" prefHeight="320.0" prefWidth="436.0" spacing="20.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="434.0" text="                   Ratio de compte créé par type d'utilisateur">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="pie" onMouseClicked="#loadchart" prefHeight="299.0" prefWidth="388.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

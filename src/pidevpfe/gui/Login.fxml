@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #708090;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidevpfe.gui.LoginController">
+   <children>
+      <VBox layoutX="181.0" layoutY="92.0" prefHeight="130.0" prefWidth="100.0" spacing="60.0" AnchorPane.bottomAnchor="178.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="52.0" text="Email">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="106.0" text="Mot de passe">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="333.0" layoutY="79.0" prefHeight="157.0" prefWidth="213.0" spacing="60.0">
+         <children>
+            <TextField fx:id="tfemail" prefHeight="26.0" prefWidth="194.0" promptText="Email" style="visibility: 2px;" />
+            <PasswordField fx:id="tfpassword" promptText="Mot de passe" />
+         </children>
+      </VBox>
+      <VBox prefHeight="15.0" prefWidth="170.0" spacing="60.0" />
+      <Hyperlink fx:id="forgot" layoutX="216.0" layoutY="237.0" onAction="#ButtonAction" prefHeight="29.0" prefWidth="268.0" style="-fx-background-color: gris;" text="J'ai oublié mon mot de passe">
+         <font>
+            <Font name="Bodoni MT" size="17.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="0.8694158075601375" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Hyperlink>
+      <VBox layoutX="218.0" layoutY="277.0" prefHeight="74.0" prefWidth="247.0">
+         <children>
+            <Button fx:id="button" mnemonicParsing="false" onMouseClicked="#Login" prefHeight="32.0" prefWidth="220.0" text="connexion" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
