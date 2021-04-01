@@ -50,6 +50,8 @@ public class Plan_TravailController implements Initializable {
     private Button btnSend;
     @FXML
     private Button btncompte;
+    @FXML
+    private Button btnespace;
 
     /**
      * Initializes the controller class.
@@ -139,6 +141,17 @@ TrayNotification tray = new TrayNotification();
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);
                 mainStage.show();
+    }
+
+    @FXML
+    private void espace(ActionEvent event) throws IOException {
+                  btnespace.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("accueil_etudiant.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+
     }
     
     

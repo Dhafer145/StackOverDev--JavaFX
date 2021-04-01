@@ -49,6 +49,8 @@ public class ProposerProjetController implements Initializable {
     private TextField tfcahier;
     @FXML
     private Button btnplan;
+    @FXML
+    private Button btnespace;
 
     /**
      * Initializes the controller class.
@@ -133,10 +135,21 @@ catch (Exception e){
 
 }
     
+    @FXML
      public void planTravail() throws IOException {
     
      btnplan.getScene().getWindow().hide();
                 Parent root = FXMLLoader.load(getClass().getResource("plan_Travail.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+    }
+
+    @FXML
+    private void espace(ActionEvent event) throws IOException {
+          btnespace.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("accueil_etudiant.fxml"));
                 Stage mainStage = new Stage();
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);

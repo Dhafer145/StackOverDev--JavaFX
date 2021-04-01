@@ -21,7 +21,7 @@
                </children>
             </Pane>
             <TextField fx:id="tfdescription" layoutX="28.0" layoutY="283.0" prefHeight="65.0" prefWidth="388.0" />
-            <Button fx:id="btnajout" layoutX="500.0" layoutY="300.0" mnemonicParsing="false" onAction="#ajout" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="envoyer" textFill="WHITE" />
+            <Button fx:id="btnajout" layoutX="469.0" layoutY="300.0" mnemonicParsing="false" onAction="#ajout" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="envoyer" textFill="WHITE" />
             <Text layoutX="28.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez décrire brièvement ci_dessous votre projet" wrappingWidth="288.9830722808838" />
             <Text layoutX="28.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du sujet :" wrappingWidth="239.9830722808838" />
             <Text layoutX="28.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="veuillez joindre ici le cahier de charge : " wrappingWidth="239.9830722808838" />
@@ -29,6 +29,7 @@
             <TextField fx:id="tfsujet" layoutX="126.0" layoutY="152.0" prefHeight="31.0" prefWidth="372.0" />
             <TextField fx:id="tfcahier" layoutX="375.0" layoutY="241.0" prefHeight="0.0" prefWidth="247.0" />
             <Button fx:id="btnplan" layoutX="28.0" layoutY="365.0" mnemonicParsing="false" onAction="#planTravail" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #2E70DE;" text="plan de travail" textFill="WHITE" />
+            <Button fx:id="btnespace" layoutX="435.0" layoutY="365.0" mnemonicParsing="false" onAction="#espace" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #1FA363;" text="Espace étudiant" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

@@ -28,6 +28,7 @@
             <TextField fx:id="text_backlog" layoutX="326.0" layoutY="271.0" prefHeight="25.0" prefWidth="407.0" />
             <TextField fx:id="text_sprint" alignment="TOP_LEFT" layoutX="326.0" layoutY="365.0" prefHeight="54.0" prefWidth="407.0" />
             <Button fx:id="btncompte" layoutX="42.0" layoutY="453.0" mnemonicParsing="false" onAction="#Compte" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #2E70DE;" text="Compte rendu" textFill="WHITE" />
+            <Button fx:id="btnespace" layoutX="606.0" layoutY="453.0" mnemonicParsing="false" onAction="#espace" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #1FA363;" text="Espace étudiant" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>
