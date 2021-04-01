@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -25,10 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -36,20 +33,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tools.MyConnection;
 
-import javafx.scene.control.SelectionModel;
-
-
 /**
  * FXML Controller class
  *
  * @author Jihene
  */
-public class AfficherEvController implements Initializable {
+public class AfficherEvResponsableController implements Initializable {
 
     @FXML
     private TableView<EvaluationMi> table;
     @FXML
-    private TableColumn<EvaluationMi,Integer> col_id;
+    private TableColumn<EvaluationMi, Integer> col_id;
     @FXML
     private TableColumn<EvaluationMi, Integer> col_enc;
     @FXML
@@ -57,79 +51,38 @@ public class AfficherEvController implements Initializable {
     @FXML
     private TableColumn<EvaluationMi, String> col_etu1;
     @FXML
+    private TableColumn<EvaluationMi, String> col_enc1;
+    @FXML
     private TableColumn<EvaluationMi, Date> col_date;
     @FXML
-    private Button btnA;
-    @FXML
-    private Button btnS;
-    @FXML
-    private Button btnM;
-    @FXML
-    private Button btnAct;
+    private TextField choose_id;
     @FXML
     private Button btnAff;
-    @FXML
-    private TextField choose_id;
     
-    private int id_encadrant=92;
-    
-    
-    
+    private String nomE;
+    private String nomEnc;
     
     ObservableList<EvaluationMi> oblist = FXCollections.observableArrayList();
-    
-//    TableViewSelectionModel selectionModel = table.getSelectionModel();
-    
-//    selectionModel.setSelectionMode(SelectionMode.SINGLE);
-
-    
-
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         loadTable();
+        // TODO
     }    
-    
+
     @FXML
-    private void getAddView(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/AjoutEvMi.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage =  new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Ajouter evaluation");
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    private void modifier(MouseEvent event) {
+         
+       EvaluationMi em= table.getSelectionModel().getSelectedItem();
+       choose_id.setText(String.valueOf(em.getId_ev_mi()));
     }
-    
-    @FXML
-    private void getModView(ActionEvent event) {
-        EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
-        try {
-            
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/ModifierEvMi.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Modifier evaluation");
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
+
     @FXML
     private void getConsView(ActionEvent event) {
+        
         EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
         try {
             
@@ -146,31 +99,6 @@ public class AfficherEvController implements Initializable {
         
     }
     
-    
-    @FXML
-    private void deleteEv(ActionEvent event) {
-        
-        int id_c;
-        id_c =Integer.parseInt(choose_id.getText());
-        Connection cnx = MyConnection.getInstance().getConnection();
-        PreparedStatement stmt;
-        
-            
-        try {
-            stmt = cnx.prepareStatement("DELETE FROM evaluation where id = ?");
-            stmt.setInt(1, id_c);
-            stmt.execute();
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        loadTable();
-        
-    }
-    
-    
     public void loadTable(){
         
         try {
@@ -178,24 +106,35 @@ public class AfficherEvController implements Initializable {
             oblist.clear();
             Connection cnx = MyConnection.getInstance().getConnection();
             
-            ResultSet rs = cnx.createStatement().executeQuery("Select id,id_enc,id_etu,date_r from evaluation where id_enc="+id_encadrant+"");
+            ResultSet rs = cnx.createStatement().executeQuery("Select id,id_enc,id_etu,date_r from evaluation");
 
 
             while(rs.next()){
                 Connection cnx1 = MyConnection.getInstance().getConnection();
                 
                 int i= rs.getInt("id_etu");
+                int j= rs.getInt("id_enc");
+                
                 System.out.println(i);
                 ResultSet rs1=cnx1.createStatement().executeQuery("Select * from user where id_user="+i+"");
-                
+                ResultSet rs2=cnx1.createStatement().executeQuery("Select * from user where id_user="+j+"");
                 
                 while(rs1.next()){
 //                    System.out.println(rs1.getString("full_name"));
-                    String nomE=rs1.getString("full_name");
+                    nomE=rs1.getString("full_name");
                     System.out.println(nomE);
                 
-                oblist.add(new EvaluationMi(rs.getInt("id"),rs.getInt("id_enc"),rs.getInt("id_etu"),nomE,rs.getDate("date_r")));
-                }
+                 }
+                
+                while(rs2.next()){
+//                    System.out.println(rs1.getString("full_name"));
+                    nomEnc=rs2.getString("full_name");
+                    System.out.println(nomEnc);
+                
+                 }
+                
+                oblist.add(new EvaluationMi(rs.getInt("id"),rs.getInt("id_etu"),rs.getInt("id_enc"),nomE,nomEnc,rs.getDate("date_r")));
+               
             }
             
             // TODO
@@ -208,6 +147,7 @@ public class AfficherEvController implements Initializable {
         col_enc.setCellValueFactory(new PropertyValueFactory<>("id_enc"));
         col_etu.setCellValueFactory(new PropertyValueFactory<>("id_etu"));
         col_etu1.setCellValueFactory(new PropertyValueFactory<>("nom_etudiant"));
+        col_enc1.setCellValueFactory(new PropertyValueFactory<>("nom_encadrant"));
         col_date.setCellValueFactory(new PropertyValueFactory<>("date_r"));
         
        
@@ -215,22 +155,5 @@ public class AfficherEvController implements Initializable {
         table.setItems(oblist);
     
     }
-    
-    @FXML
-    private void modifier(MouseEvent event) {
-        
-       EvaluationMi em= table.getSelectionModel().getSelectedItem();
-       choose_id.setText(String.valueOf(em.getId_ev_mi()));
-//       text_tache.setText(jp.getTache());
-//       text_avis.setText(jp.getAvis());
-       
-       
-       
-     
-       
-      
-    }
-    
-    
     
 }

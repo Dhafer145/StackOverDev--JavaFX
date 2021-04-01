@@ -39,9 +39,9 @@ public class SendMail {
 
   //  properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         //Your gmail address
-        String myAccountEmail = "jihene.labidi@esprit.tn";
+        String myAccountEmail = "esprit.pfe2021@gmail.com";
         //Your gmail password
-        String password = "12345esprit**";
+        String password = "espritesprit";
 
         //Create a session with account credentials
         Session session = Session.getInstance(properties, new Authenticator() {
@@ -56,6 +56,7 @@ public class SendMail {
 
         //Send mail
         Transport.send(message);
+        
         System.out.println("Message sent successfully");
     }
 
@@ -64,8 +65,8 @@ public class SendMail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("My First Email from Java App");
-            String htmlCode = "<h1> WE LOVE JAVA </h1> <br/> <h2><b>Next Line </b></h2>";
+            message.setSubject("Grille d'evaluation");
+            String htmlCode = "<h1> Une grille d'evaluation a été ajoutée </h1> <br/> ";
             message.setContent(htmlCode, "text/html");
             return message;
         } catch (Exception ex) {

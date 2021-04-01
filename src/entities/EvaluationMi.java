@@ -16,6 +16,8 @@ public class EvaluationMi {
     private int id_ev_mi;
     private int id_enc;
     private int id_etu;
+    public String nom_etudiant;
+    public String nom_encadrant;
     
     private Date date_r;
     
@@ -66,6 +68,15 @@ public class EvaluationMi {
         this.comm5 = comm5;
     }
 
+    public EvaluationMi(int id_ev_mi, int id_enc, int id_etu, String nom_etudiant, String nom_encadrant, Date date_r) {
+        this.id_ev_mi = id_ev_mi;
+        this.id_enc = id_enc;
+        this.id_etu = id_etu;
+        this.nom_etudiant = nom_etudiant;
+        this.nom_encadrant = nom_encadrant;
+        this.date_r = date_r;
+    }
+
     public EvaluationMi(int id_ev_mi, int id_enc, int id_etu, Date date_r) {
         this.id_ev_mi = id_ev_mi;
         this.id_enc = id_enc;
@@ -73,11 +84,36 @@ public class EvaluationMi {
         this.date_r = date_r;
     }
 
+    public EvaluationMi(int id_ev_mi, int id_enc, int id_etu, String nom_etudiant, Date date_r) {
+        this.id_ev_mi = id_ev_mi;
+        this.id_enc = id_enc;
+        this.id_etu = id_etu;
+        this.nom_etudiant = nom_etudiant;
+        this.date_r = date_r;
+    }
+
+    
+    
     public EvaluationMi(int id_ev_mi, int id_enc, int id_etu, Date date_r, boolean ponctualite, String comm1, boolean integration, String comm2, boolean travail, String comm3, boolean competence, String comm4, boolean eg, String comm5) {
         this.id_ev_mi = id_ev_mi;
         this.id_enc = id_enc;
         this.id_etu = id_etu;
         this.date_r = date_r;
+        this.ponctualite = ponctualite;
+        this.comm1 = comm1;
+        this.integration = integration;
+        this.comm2 = comm2;
+        this.travail = travail;
+        this.comm3 = comm3;
+        this.competence = competence;
+        this.comm4 = comm4;
+        this.eg = eg;
+        this.comm5 = comm5;
+    }
+
+    public EvaluationMi(int id_enc, int id_etu, boolean ponctualite, String comm1, boolean integration, String comm2, boolean travail, String comm3, boolean competence, String comm4, boolean eg, String comm5) {
+        this.id_enc = id_enc;
+        this.id_etu = id_etu;
         this.ponctualite = ponctualite;
         this.comm1 = comm1;
         this.integration = integration;
@@ -114,6 +150,14 @@ public class EvaluationMi {
 
     public void setId_etu(int id_etu) {
         this.id_etu = id_etu;
+    }
+
+    public String getNom_etudiant() {
+        return nom_etudiant;
+    }
+
+    public void setNom_etudiant(String nom_etudiant) {
+        this.nom_etudiant = nom_etudiant;
     }
 
     public Date getDate_r() {
@@ -190,6 +234,14 @@ public class EvaluationMi {
 
     public boolean isEg() {
         return eg;
+    }
+
+    public String getNom_encadrant() {
+        return nom_encadrant;
+    }
+
+    public void setNom_encadrant(String nom_encadrant) {
+        this.nom_encadrant = nom_encadrant;
     }
 
     public void setEg(boolean eg) {

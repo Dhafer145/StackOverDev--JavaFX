@@ -6,11 +6,15 @@
 package gui;
 
 import entities.EvaluationMi;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,7 +22,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import services.EvaluationMiCRUD;
+import tools.MyConnection;
+import static tools.Print.printNode;
 
 /**
  * FXML Controller class
@@ -67,6 +74,17 @@ public class ConsulterEvController implements Initializable {
     private RadioButton egnon;
     @FXML
     private TextArea commentaire5;
+    
+     @FXML
+    private TextField nomEtudiant;
+     
+     private String nomE;
+     
+     @FXML
+     private Button btnPrint;
+     
+     @FXML
+     private AnchorPane anchor;
   
 
     /**
@@ -83,12 +101,30 @@ public class ConsulterEvController implements Initializable {
         
     }    
     
-    @FXML
     private void loadData() throws SQLException {
         
         EvaluationMiCRUD emc = new EvaluationMiCRUD();
         EvaluationMi ev = new EvaluationMi();
         ev=emc.consulterEvaluationMi();
+        
+        
+        
+        Connection cnx1 = MyConnection.getInstance().getConnection();
+                
+                int i= ev.getId_etu();
+                System.out.println(i);
+                ResultSet rs1=cnx1.createStatement().executeQuery("Select * from user where id_user="+i+"");
+                
+                
+                while(rs1.next()){
+//                    System.out.println(rs1.getString("full_name"));
+                    nomE=rs1.getString("full_name");
+                    System.out.println(nomE);
+                }
+        
+        
+                
+        nomEtudiant.setText(nomE);
         
          if(ev.isPonctualite())
             ponctualiteoui.setSelected(true);
@@ -127,5 +163,16 @@ public class ConsulterEvController implements Initializable {
         
         
     }
+
+    @FXML
+    private void print(ActionEvent event) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        
+
+           printNode(anchor);
+
+        
+    }
+    
+    
     
 }

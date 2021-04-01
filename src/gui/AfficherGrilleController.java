@@ -6,6 +6,7 @@
 package gui;
 
 import entities.EvaluationMi;
+import entities.GrilleEvaluation;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -25,10 +26,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -36,28 +35,31 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tools.MyConnection;
 
-import javafx.scene.control.SelectionModel;
-
-
 /**
  * FXML Controller class
  *
  * @author Jihene
  */
-public class AfficherEvController implements Initializable {
+public class AfficherGrilleController implements Initializable {
 
     @FXML
-    private TableView<EvaluationMi> table;
+    private TableView<GrilleEvaluation> table;
     @FXML
-    private TableColumn<EvaluationMi,Integer> col_id;
+    private TableColumn<GrilleEvaluation, Integer> col_id;
     @FXML
-    private TableColumn<EvaluationMi, Integer> col_enc;
+    private TableColumn<GrilleEvaluation, Integer> col_enc;
     @FXML
-    private TableColumn<EvaluationMi, Integer> col_etu;
+    private TableColumn<GrilleEvaluation, Integer> col_etu;
     @FXML
-    private TableColumn<EvaluationMi, String> col_etu1;
+    private TableColumn<GrilleEvaluation, String> col_etu1;
     @FXML
-    private TableColumn<EvaluationMi, Date> col_date;
+    private TableColumn<GrilleEvaluation, Integer> col_note;
+    @FXML
+    private TableColumn<GrilleEvaluation, String> col_mention;
+    @FXML
+    private TableColumn<GrilleEvaluation, Date> col_date;
+    @FXML
+    private TextField choose_id;
     @FXML
     private Button btnA;
     @FXML
@@ -68,40 +70,38 @@ public class AfficherEvController implements Initializable {
     private Button btnAct;
     @FXML
     private Button btnAff;
-    @FXML
-    private TextField choose_id;
-    
-    private int id_encadrant=92;
     
     
+    private int id_encadrant=90;
     
     
-    ObservableList<EvaluationMi> oblist = FXCollections.observableArrayList();
-    
-//    TableViewSelectionModel selectionModel = table.getSelectionModel();
-    
-//    selectionModel.setSelectionMode(SelectionMode.SINGLE);
-
-    
-
+    ObservableList<GrilleEvaluation> oblist = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         loadTable();
     }    
-    
+
+    @FXML
+    private void modifier(MouseEvent event) {
+        
+        GrilleEvaluation em= table.getSelectionModel().getSelectedItem();
+       choose_id.setText(String.valueOf(em.getId_grille()));
+        
+    }
+
     @FXML
     private void getAddView(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/AjoutEvMi.fxml"));
+        
+         try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/AjoutGrille.fxml"));
             Scene scene = new Scene(parent);
             Stage stage =  new Stage();
             stage.setScene(scene);
-            stage.setTitle("Ajouter evaluation");
+            stage.setTitle("Ajouter grille d'evaluation");
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
@@ -109,55 +109,18 @@ public class AfficherEvController implements Initializable {
         }
         
     }
-    
-    @FXML
-    private void getModView(ActionEvent event) {
-        EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
-        try {
-            
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/ModifierEvMi.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Modifier evaluation");
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
-    @FXML
-    private void getConsView(ActionEvent event) {
-        EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
-        try {
-            
-            Parent parent = FXMLLoader.load(getClass().getResource("/gui/ConsulterEv.fxml"));
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Modifier evaluation");
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
-    
+
     @FXML
     private void deleteEv(ActionEvent event) {
         
-        int id_c;
+         int id_c;
         id_c =Integer.parseInt(choose_id.getText());
         Connection cnx = MyConnection.getInstance().getConnection();
         PreparedStatement stmt;
         
             
         try {
-            stmt = cnx.prepareStatement("DELETE FROM evaluation where id = ?");
+            stmt = cnx.prepareStatement("DELETE FROM grille where id = ?");
             stmt.setInt(1, id_c);
             stmt.execute();
             
@@ -169,16 +132,18 @@ public class AfficherEvController implements Initializable {
         loadTable();
         
     }
-    
-    
-    public void loadTable(){
+
+   
+
+    @FXML
+    private void loadTable() {
         
-        try {
+         try {
             
             oblist.clear();
             Connection cnx = MyConnection.getInstance().getConnection();
             
-            ResultSet rs = cnx.createStatement().executeQuery("Select id,id_enc,id_etu,date_r from evaluation where id_enc="+id_encadrant+"");
+            ResultSet rs = cnx.createStatement().executeQuery("Select id,id_enc,id_etu,date_r,mention,note from grille where id_enc="+id_encadrant+"");
 
 
             while(rs.next()){
@@ -194,13 +159,13 @@ public class AfficherEvController implements Initializable {
                     String nomE=rs1.getString("full_name");
                     System.out.println(nomE);
                 
-                oblist.add(new EvaluationMi(rs.getInt("id"),rs.getInt("id_enc"),rs.getInt("id_etu"),nomE,rs.getDate("date_r")));
+                oblist.add(new GrilleEvaluation(rs.getInt("id"),rs.getInt("id_enc"),rs.getInt("id_etu"),nomE,rs.getDate("date_r"),rs.getString("mention"),rs.getInt("note")));
                 }
             }
             
             // TODO
         } catch (SQLException ex) {
-            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AfficherGrilleController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
@@ -209,28 +174,51 @@ public class AfficherEvController implements Initializable {
         col_etu.setCellValueFactory(new PropertyValueFactory<>("id_etu"));
         col_etu1.setCellValueFactory(new PropertyValueFactory<>("nom_etudiant"));
         col_date.setCellValueFactory(new PropertyValueFactory<>("date_r"));
-        
+        col_mention.setCellValueFactory(new PropertyValueFactory<>("mention"));
+        col_note.setCellValueFactory(new PropertyValueFactory<>("note"));
        
         
         table.setItems(oblist);
     
-    }
-    
-    @FXML
-    private void modifier(MouseEvent event) {
         
-       EvaluationMi em= table.getSelectionModel().getSelectedItem();
-       choose_id.setText(String.valueOf(em.getId_ev_mi()));
-//       text_tache.setText(jp.getTache());
-//       text_avis.setText(jp.getAvis());
-       
-       
-       
-     
-       
-      
+    }
+
+    @FXML
+    private void getConsView(ActionEvent event) {
+        
+         EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
+        try {
+            
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/ConsulterGrille.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Modifier grille");
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
-    
+     @FXML
+    private void getModView(ActionEvent event) {
+        
+        EvaluationMi.chosen = Integer.parseInt(choose_id.getText());
+        try {
+            
+            Parent parent = FXMLLoader.load(getClass().getResource("/gui/ModifierGrille.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Modifier grille d'evaluation");
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherEvController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="579.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.ModifierGrilleController">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="65.0" prefWidth="580.0" style="-fx-background-color: #2E70DE;">
+         <children>
+            <Text fill="WHITE" layoutX="11.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grille d’évaluation des stages du projet de fin d’études">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Label layoutX="52.0" layoutY="150.0" text="1- Comprendre et intégrer les enjeux et la stratégie de l’entreprise" />
+      <Label layoutX="52.0" layoutY="189.0" text="2- Analyser et/ou chercher les solutions à un problème de conception, " />
+      <Label layoutX="52.0" layoutY="206.0" text="de réalisation, d’amélioration de produit, de systèmes ou de services " />
+      <Label layoutX="52.0" layoutY="223.0" text="au sein d’une organisation" />
+      <Label layoutX="51.0" layoutY="257.0" text="3- Conduire un projet de création, de conception, de réalisation," />
+      <Label layoutX="51.0" layoutY="274.0" text="d’amélioration de produit, de système ou de service" />
+      <Label layoutX="51.0" layoutY="310.0" text="4- Mettre en œuvre sa maîtrise scientifique ou technique au sein" />
+      <Label layoutX="51.0" layoutY="327.0" text="de l’organisation" />
+      <Label layoutX="51.0" layoutY="363.0" text="5- Organiser sa mission et manager les ressources " />
+      <Label layoutX="51.0" layoutY="399.0" text="6- Qualité et présentation du document " />
+      <Label layoutX="51.0" layoutY="434.0" text="7- Qualité de la présentation orale " />
+      <Label layoutX="51.0" layoutY="473.0" text="8- Qualité de l’argumentation" />
+      <Line endX="-100.0" endY="389.0" layoutX="140.0" layoutY="110.0" startX="-100.0" startY="-3.0" />
+      <Line endX="-99.5" endY="388.0" layoutX="647.0" layoutY="110.0" startX="-100.0" startY="-3.0" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="101.0" startX="-456.5" startY="5.5" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="493.0" startX="-456.5" startY="5.5" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="133.0" startX="-456.5" startY="5.5" />
+      <Label layoutX="174.0" layoutY="114.0" text="Compétences visées">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="462.0" layoutY="114.0" text="Résultat">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Line endX="-100.0" endY="388.0" layoutX="527.0" layoutY="111.0" startX="-100.0" startY="-5.0" />
+      <ComboBox fx:id="c1" layoutX="440.0" layoutY="146.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <ComboBox fx:id="c2" layoutX="440.0" layoutY="201.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="175.0" startX="-456.5" startY="5.5" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="241.0" startX="-456.5" startY="5.5" />
+      <ComboBox fx:id="c3" layoutX="440.0" layoutY="259.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="296.0" startX="-456.5" startY="5.5" />
+      <ComboBox fx:id="c4" layoutX="440.0" layoutY="315.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="349.0" startX="-456.5" startY="5.5" />
+      <ComboBox fx:id="c5" layoutX="440.0" layoutY="360.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="385.0" startX="-456.5" startY="5.5" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="422.0" startX="-456.5" startY="5.5" />
+      <ComboBox fx:id="c6" layoutX="440.0" layoutY="397.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <ComboBox fx:id="c7" layoutX="440.0" layoutY="433.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Line endX="50.0" endY="5.5" layoutX="497.0" layoutY="458.0" startX="-456.5" startY="5.5" />
+      <ComboBox fx:id="c8" layoutX="440.0" layoutY="468.0" prefHeight="25.0" prefWidth="94.0" promptText="noter" />
+      <Button fx:id="btnConfirmer" layoutX="194.0" layoutY="577.0" mnemonicParsing="false" onAction="#modifEv" text="Confirmer" />
+      <Button fx:id="btnAnnuler" layoutX="300.0" layoutY="577.0" mnemonicParsing="false" text="Annuler" />
+      <Label layoutX="140.0" layoutY="504.0" text="A (5points)     B (4 points)     C (2 points)     D (1 point)" />
+      <TextField fx:id="noteF" layoutX="181.0" layoutY="534.0" prefHeight="25.0" prefWidth="62.0" />
+      <TextField fx:id="mentionF" layoutX="362.0" layoutY="534.0" prefHeight="25.0" prefWidth="93.0" />
+      <Button fx:id="btnTotal" layoutX="77.0" layoutY="534.0" mnemonicParsing="false" onAction="#affTotal" text="Total" />
+      <Label layoutX="147.0" layoutY="538.0" text="Note" />
+      <Label layoutX="312.0" layoutY="538.0" text="Mention" />
+      <Label layoutX="247.0" layoutY="538.0" text="/40" />
+   </children>
+</AnchorPane>

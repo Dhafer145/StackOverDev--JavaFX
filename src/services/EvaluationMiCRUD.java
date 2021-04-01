@@ -26,21 +26,23 @@ public class EvaluationMiCRUD {
     }
     
      public void ajouterEvaluationMi(EvaluationMi evaluation){
-        String req ="INSERT INTO ev (ponctualite,comm1,integration,comm2,travail,comm3,competence,comm4,eg,comm5)"
-                +"values (?,?,?,?,?,?,?,?,?,?)";
+        String req ="INSERT INTO evaluation (id_enc,id_etu,ponctualite,comm1,integration,comm2,travail,comm3,competence,comm4,eg,comm5)"
+                +"values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             ste = cnx.prepareStatement(req);
             
-            ste.setBoolean(1, evaluation.isPonctualite());
-            ste.setString(2, evaluation.getComm1());
-            ste.setBoolean(3, evaluation.isIntegration());
-            ste.setString(4, evaluation.getComm2());
-            ste.setBoolean(5, evaluation.isTravail());
-            ste.setString(6, evaluation.getComm3());
-            ste.setBoolean(7, evaluation.isCompetence());
-            ste.setString(8, evaluation.getComm4());
-            ste.setBoolean(9, evaluation.isEg());
-            ste.setString(10, evaluation.getComm5());
+            ste.setInt(1, evaluation.getId_enc());
+            ste.setInt(2, evaluation.getId_etu());
+            ste.setBoolean(3, evaluation.isPonctualite());
+            ste.setString(4, evaluation.getComm1());
+            ste.setBoolean(5, evaluation.isIntegration());
+            ste.setString(6, evaluation.getComm2());
+            ste.setBoolean(7, evaluation.isTravail());
+            ste.setString(8, evaluation.getComm3());
+            ste.setBoolean(9, evaluation.isCompetence());
+            ste.setString(10, evaluation.getComm4());
+            ste.setBoolean(11, evaluation.isEg());
+            ste.setString(12, evaluation.getComm5());
             
             
             ste.executeUpdate();
@@ -55,7 +57,7 @@ public class EvaluationMiCRUD {
 }
      
      public void modifierEvaluationMi(EvaluationMi evaluation, int idEvaluation){
-        String req = "UPDATE ev SET ponctualite=?,comm1=?,integration=?,comm2=?,travail=?,"
+        String req = "UPDATE evaluation SET ponctualite=?,comm1=?,integration=?,comm2=?,travail=?,"
                 + "comm3=?,competence=?,comm4=?,eg=?,comm5=? WHERE id= ?";
        try {
             ste = cnx.prepareStatement(req);
@@ -84,7 +86,7 @@ public class EvaluationMiCRUD {
         EvaluationMi ev = null;
        int id = EvaluationMi.chosen;
            
-           ResultSet rs = cnx.createStatement().executeQuery("Select * from ev where id="+id+"");
+           ResultSet rs = cnx.createStatement().executeQuery("Select * from evaluation where id="+id+"");
            
            if(rs.next()){
                 ev =new EvaluationMi(rs.getInt("id"),rs.getInt("id_enc"),

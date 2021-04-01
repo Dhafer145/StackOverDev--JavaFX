@@ -12,7 +12,7 @@
     <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
-    <jar href="test.jar" size="24450" download="eager" />
+    <jar href="test.jar" size="59799" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="test" >
     <param name="requiredFXVersion" value="8.0+"/>
