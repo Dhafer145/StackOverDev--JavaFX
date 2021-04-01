@@ -10,8 +10,11 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -77,6 +80,13 @@ public class AffecterEncadrantController implements Initializable {
     private Label lgereruser;
     @FXML
     private Label lgererprofile;
+    @FXML
+    private ComboBox cbpro;
+    
+    
+    private int id1;
+    private int id2;
+    private int id3;
 
     
     @Override
@@ -84,6 +94,7 @@ public class AffecterEncadrantController implements Initializable {
         showEtudiant();
         showEncadrant();
        showaffectation();
+       showPro();
     }    
     
     
@@ -196,26 +207,49 @@ cbencadrant.setItems(encadrant);
 
     @FXML
      public void affecter(){
-      Connection connection =Myconnexion.getInstance().getConnection();
-        PreparedStatement stm;
         try{
-             String e = cbetudiant.getSelectionModel().getSelectedItem().toString();
-             String a = cbencadrant.getSelectionModel().getSelectedItem().toString();
-            stm = connection.prepareStatement("insert into affectation(nom_etudiant,nom_encadrant_academique,nom_encadrant_entreprise) values(?,?,?)");
-             stm.setString(1,e);
-            stm.setString(2,a);
-            stm.setString(3,tfpro.getText());
-
-        int i = stm.executeUpdate();
-            System.out.println(i);
+            Connection connection =Myconnexion.getInstance().getConnection();
+            PreparedStatement stm;
+            String e = cbetudiant.getSelectionModel().getSelectedItem().toString();
+            String a = cbencadrant.getSelectionModel().getSelectedItem().toString();
+            String p = cbpro.getSelectionModel().getSelectedItem().toString();
+            
+            String e1 ="\""+e+"\"";
+            String a1 ="\""+a+"\"";
+            String p1 ="\""+p+"\"";
+            
+            ResultSet rs1 = connection.createStatement().executeQuery("select id_user from user where full_name="+e1+"");
+            ResultSet rs2 = connection.createStatement().executeQuery("select id_user from user where full_name="+a1+"");
+            ResultSet rs3 = connection.createStatement().executeQuery("select id_user from user where full_name="+p1+"");
+            while(rs1.next()){id1=rs1.getInt("id_user");}
+            while(rs2.next()){id2=rs2.getInt("id_user");}
+            while(rs3.next()){id3=rs3.getInt("id_user");}
+            
+            
+            try{
+                
+                stm = connection.prepareStatement("insert into affectation(nom_etudiant,nom_encadrant_academique,nom_encadrant_entreprise,id_etudiant,id_encadrant_academique,id_encadrant_entreprise) values(?,?,?,?,?,?)");
+                stm.setString(1,e);
+                stm.setString(2,a);
+                stm.setString(3,p);
+                stm.setInt(4,id1);
+                stm.setInt(5,id2);
+                stm.setInt(6,id3);
+                
+                int i = stm.executeUpdate();
+                System.out.println(i);
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+            showaffectation();
+            showEncadrant();
+            showEtudiant();
+            cbetudiant.getSelectionModel().getSelectedItem();
         }
-        catch (Exception e){
-            e.printStackTrace();
+        catch (SQLException ex){
+            Logger.getLogger(AffecterEncadrantController.class.getName()).log(Level.SEVERE, null, ex);
         }
-     showaffectation();
-     showEncadrant();
-     showEtudiant();
-     cbetudiant.getSelectionModel().getSelectedItem();
      }
  
     
@@ -244,6 +278,46 @@ cbencadrant.setItems(encadrant);
         return affectationList;
         
     }
+       
+       
+       
+       public ObservableList<user> getProList(){
+        ObservableList<user> userList = FXCollections.observableArrayList();
+       
+        PreparedStatement pst = null;
+     ResultSet rs = null;
+       
+     Connection cnx = Myconnexion.getInstance().getConnection();
+        
+       String req = "SELECT full_name FROM user WHERE user.role=?";
+        
+        try{
+           pst = cnx.prepareStatement(req);
+            pst.setString(1, "Encadrant Professionnel");
+            rs = pst.executeQuery();
+             user usr;  
+            while(rs.next()){
+                usr = new user(rs.getString("full_name")); // depuis bd //
+                userList.add(usr);   
+            }
+                
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return userList;
+        
+    }
+    
+    
+     public void showPro(){
+           
+ ObservableList<user> encadrant = getProList();      
+cbpro.setItems(encadrant);
+        
+     }
+       
+       
+       
     
      public void showaffectation(){
         ObservableList<affectation> list = getaffectationList();

@@ -48,8 +48,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicOptionPaneUI;
 import org.controlsfx.control.Notifications;
 import pidevpfe.entities.user;
-import static pidevpfe.gui.userController.decryptage;
-import static pidevpfe.gui.userController.sendMail;
+
 
 /**
  * FXML Controller class

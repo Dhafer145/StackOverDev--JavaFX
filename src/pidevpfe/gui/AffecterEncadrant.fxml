@@ -105,5 +105,6 @@
             </Label>
          </children>
       </VBox>
+      <ComboBox fx:id="cbpro" layoutX="160.0" layoutY="396.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
