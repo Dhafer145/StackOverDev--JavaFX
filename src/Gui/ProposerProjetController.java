@@ -27,6 +27,7 @@ import javax.swing.JOptionPane;
 import tools.Myconn;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
+import utils.SendEmail;
 
 /**
  * FXML Controller class
@@ -76,7 +77,7 @@ public class ProposerProjetController implements Initializable {
     }
 
     @FXML
-    private void ajout(ActionEvent event) {
+    private void ajout(ActionEvent event) throws Exception {
         
          
 
@@ -109,7 +110,7 @@ stm.setString(3, tfdescription.getText());
 
 
 String title = "succes ";
-        String message = "compte rendu ajouté avec succes";
+        String message = "proposition ajoutée avec succes";
 
 TrayNotification tray = new TrayNotification();
         tray.setTitle(title);
@@ -122,10 +123,11 @@ int i = stm.executeUpdate();
              }
     
         }
-    
+   
 catch (Exception e){
             e.printStackTrace();
         }
+         SendEmail.sendMail("dhaferharbaoui@gmail.com");
       
       
 

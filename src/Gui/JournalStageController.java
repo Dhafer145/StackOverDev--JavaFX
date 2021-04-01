@@ -12,6 +12,7 @@ import static Tools.Print.printNode;
 import com.itextpdf.text.DocumentException;
 import entities.Journal_projet;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.sql.Connection;
@@ -31,11 +32,15 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
@@ -79,6 +84,8 @@ public class JournalStageController implements Initializable {
     private Button btnModifier;
     @FXML
     private TextField text_id;
+    @FXML
+    private Button btnespace;
     
     
     @Override
@@ -269,6 +276,17 @@ TrayNotification tray = new TrayNotification();
        
       
     }
+
+    @FXML
+    private void espace(ActionEvent event) throws IOException {
+         btnespace.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("accueil_etudiant.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+    }
+    
     
     
 }

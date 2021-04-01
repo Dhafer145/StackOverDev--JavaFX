@@ -60,6 +60,8 @@ public class CompteRenduController implements Initializable {
     String path;
     @FXML
     private Button btnjs;
+    @FXML
+    private Button btnespace;
  @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -130,6 +132,16 @@ TrayNotification tray = new TrayNotification();
     
      btnjs.getScene().getWindow().hide();
                 Parent root = FXMLLoader.load(getClass().getResource("Journal_Stage.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+    }
+
+    @FXML
+    private void espace(ActionEvent event) throws IOException {
+         btnespace.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("accueil_etudiant.fxml"));
                 Stage mainStage = new Stage();
                 Scene scene = new Scene(root);
                 mainStage.setScene(scene);

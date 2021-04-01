@@ -39,5 +39,6 @@
       </TableView>
       <Button fx:id="print" layoutX="174.0" layoutY="424.0" mnemonicParsing="false" onAction="#print" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="print" textFill="WHITE" />
       <Button fx:id="btnModifier" layoutX="284.0" layoutY="424.0" mnemonicParsing="false" onAction="#Modif" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2E70DE;" text="modifier" textFill="WHITE" />
+      <Button fx:id="btnespace" layoutX="487.0" layoutY="440.0" mnemonicParsing="false" onAction="#espace" prefHeight="31.0" prefWidth="185.0" style="-fx-background-color: #1FA363;" text="Espace étudiant" textFill="WHITE" />
    </children>
 </AnchorPane>

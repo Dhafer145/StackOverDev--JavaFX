@@ -24,6 +24,7 @@
       <Text layoutX="51.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="veuillez mettre votre commentaire ici" wrappingWidth="239.9830722808838" />
       <Text layoutX="51.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="veuillez joindre ici votre compte rendu" wrappingWidth="239.9830722808838" />
       <TextField fx:id="listview" layoutX="309.0" layoutY="200.0" />
-      <Button fx:id="btnjs" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#journal" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #2E70DE;" text="Journal de stage" textFill="WHITE" />
+      <Button fx:id="btnjs" layoutX="14.0" layoutY="358.0" mnemonicParsing="false" onAction="#journal" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #2E70DE;" text="Journal de stage" textFill="WHITE" />
+      <Button fx:id="btnespace" layoutX="426.0" layoutY="361.0" mnemonicParsing="false" onAction="#espace" prefHeight="31.0" prefWidth="161.0" style="-fx-background-color: #1FA363;" text="Espace étudiant" textFill="WHITE" />
    </children>
 </AnchorPane>
