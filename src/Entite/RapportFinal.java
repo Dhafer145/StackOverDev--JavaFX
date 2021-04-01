@@ -11,8 +11,75 @@ package Entite;
  */
 public class RapportFinal {
       private int id_RF ;
+      
+      private int id_encadrant;
+      private int id_etudiant;
+      private String nom_etudiant;
       private String fichier;
       private String plagiat ;
+
+      
+      
+      
+    public int getId_encadrant() {
+        return id_encadrant;
+    }
+
+    public void setId_encadrant(int id_encadrant) {
+        this.id_encadrant = id_encadrant;
+    }
+
+    public int getId_etudiant() {
+        return id_etudiant;
+    }
+
+    public String getNom_etudiant() {
+        return nom_etudiant;
+    }
+
+    public void setNom_etudiant(String nom_etudiant) {
+        this.nom_etudiant = nom_etudiant;
+    }
+
+    public void setId_etudiant(int id_etudiant) {
+        this.id_etudiant = id_etudiant;
+    }
+
+    public RapportFinal(int id_RF, int id_encadrant, int id_etudiant, String nom_etudiant, String fichier, String plagiat) {
+        this.id_RF = id_RF;
+        this.id_encadrant = id_encadrant;
+        this.id_etudiant = id_etudiant;
+        this.nom_etudiant = nom_etudiant;
+        this.fichier = fichier;
+        this.plagiat = plagiat;
+    }
+
+    
+    
+    public RapportFinal(int id_encadrant, int id_etudiant, String nom_etudiant, String fichier, String plagiat) {
+        this.id_encadrant = id_encadrant;
+        this.id_etudiant = id_etudiant;
+        this.nom_etudiant = nom_etudiant;
+        this.fichier = fichier;
+        this.plagiat = plagiat;
+    }
+      
+     
+
+    public RapportFinal(int id_encadrant, int id_etudiant, String fichier, String plagiat) {
+        this.id_encadrant = id_encadrant;
+        this.id_etudiant = id_etudiant;
+        this.fichier = fichier;
+        this.plagiat = plagiat;
+    }
+
+    public RapportFinal(int id_RF, int id_encadrant, int id_etudiant, String fichier, String plagiat) {
+        this.id_RF = id_RF;
+        this.id_encadrant = id_encadrant;
+        this.id_etudiant = id_etudiant;
+        this.fichier = fichier;
+        this.plagiat = plagiat;
+    }
 
   
 
