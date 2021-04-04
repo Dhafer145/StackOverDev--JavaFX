@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AfficherGrilleController">
+   <children>
+      <TableView fx:id="table" layoutX="85.0" layoutY="84.0" onMouseClicked="#modifier" prefHeight="252.0" prefWidth="443.0">
+         <columns>
+            <TableColumn fx:id="col_id" prefWidth="129.0" text="ID" visible="false" />
+            <TableColumn fx:id="col_enc" prefWidth="116.0" text="Encadrant" visible="false" />
+            <TableColumn fx:id="col_etu" prefWidth="131.0" text="Id etudiant" visible="false" />
+            <TableColumn fx:id="col_etu1" prefWidth="127.0" text="Nom etudiant" />
+            <TableColumn fx:id="col_note" prefWidth="81.0" text="Note" />
+            <TableColumn fx:id="col_mention" prefWidth="77.0" text="Mention" />
+            <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="173.0" text="Date de remplissage" />
+         </columns>
+      </TableView>
+      <Pane prefHeight="78.0" prefWidth="587.0" style="-fx-background-color: #2E70DE;">
+         <children>
+            <Text fill="WHITE" layoutX="22.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consulter les grilles des evaluations">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="logout" layoutX="436.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #FB4848;" text="Se déconnecter" textFill="WHITE" />
+         </children>
+      </Pane>
+      <TextField fx:id="choose_id" layoutX="242.0" layoutY="351.0" prefHeight="25.0" prefWidth="57.0" />
+      <Button fx:id="btnA" layoutX="160.0" layoutY="351.0" mnemonicParsing="false" onAction="#getAddView" text="Ajouter" />
+      <Button fx:id="btnS" layoutX="234.0" layoutY="351.0" mnemonicParsing="false" onAction="#deleteEv" text="Supprimer" />
+      <Button fx:id="btnM" layoutX="323.0" layoutY="351.0" mnemonicParsing="false" onAction="#getModView" text="Modifier" />
+      <Button fx:id="btnAct" layoutX="71.0" layoutY="351.0" mnemonicParsing="false" onAction="#loadTable" text="Actualiser" />
+      <Button fx:id="btnAff" layoutX="403.0" layoutY="351.0" mnemonicParsing="false" onAction="#getConsView" text="Afficher" />
+   </children>
+</AnchorPane>

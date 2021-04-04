@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Accueil_encadrantController">
+   <children>
+      <Pane layoutY="-3.0" prefHeight="105.0" prefWidth="714.0" style="-fx-background-color: #2E70DE;">
+         <children>
+            <Text fill="WHITE" layoutX="158.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espace Encadrant Académique" textAlignment="CENTER" wrappingWidth="397.005859375">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="lemail" layoutX="14.0" layoutY="11.0" prefHeight="26.0" prefWidth="179.0" text="email" visible="false">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <HBox layoutX="416.0" layoutY="70.0" prefHeight="17.0" prefWidth="195.0" spacing="7.0" />
+            <Button fx:id="logout" layoutX="578.0" layoutY="64.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #FB4848;" text="Se déconnecter" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Button fx:id="btnpp" layoutX="351.0" layoutY="118.0" mnemonicParsing="false" onAction="#conspp" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Consulter les projets proposés" textFill="WHITE" />
+      <Button fx:id="btnconscr" layoutX="351.0" layoutY="200.0" mnemonicParsing="false" onAction="#conscr" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Consulter les comptes rendus" textFill="WHITE" />
+      <Button fx:id="btnjs" layoutX="351.0" layoutY="243.0" mnemonicParsing="false" onAction="#consjs" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Consulter les journals de stage" textFill="WHITE" />
+      <Button fx:id="btnconspt" layoutX="351.0" layoutY="157.0" mnemonicParsing="false" onAction="#conspt" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Consulter les plans de travail" textFill="WHITE" />
+      <Button fx:id="btnGrille" layoutX="351.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#GetGrille" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Grilles d'évaluation" textFill="WHITE" />
+      <Button fx:id="visualiser" layoutX="31.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#visualiserEtudiants" prefHeight="31.0" prefWidth="168.0" style="-fx-background-color: #1FA363;" text="Visualiser un étudiant" textFill="WHITE" />
+      <Button fx:id="changepassword" layoutX="31.0" layoutY="223.0" mnemonicParsing="false" onAction="#changepassword" onMouseClicked="#changepassword" prefHeight="31.0" prefWidth="168.0" style="-fx-background-color: #1FA363;" text="Changer le mot de passe" textFill="WHITE" />
+      <Button fx:id="lgererprofile" layoutX="31.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#gererProfile" prefHeight="31.0" prefWidth="168.0" style="-fx-background-color: #1FA363;" text="Gérer profil" textFill="WHITE" />
+      <Button fx:id="btnplagiat" layoutX="351.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#rapportpl" prefHeight="31.0" prefWidth="221.0" style="-fx-background-color: #1FA363;" text="Envoyer le rapport avec plagiat" textFill="WHITE" />
+      <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="35.0" layoutY="103.0" prefHeight="25.0" prefWidth="81.0" text="Bienvenue" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lnom" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="127.0" layoutY="103.0" prefHeight="25.0" prefWidth="144.0" text="Label" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnrdv" layoutX="32.0" layoutY="323.0" mnemonicParsing="false" onAction="#AjoutRdv" onMouseClicked="#visualiserEtudiants" prefHeight="31.0" prefWidth="168.0" style="-fx-background-color: #1FA363;" text="Ajouter un rendez-vous" textFill="WHITE" />
+   </children>
+</AnchorPane>
